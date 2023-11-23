@@ -14,7 +14,7 @@ const builtInJSDocFormatsTypes = [
   "ipv6",
   "url",
   "uuid",
-  // "uri",
+  "uri",
   // "date",
 ] as const;
 
@@ -345,6 +345,9 @@ function builtInFormatTypeToZodPropertyIdentifier(
     case "ipv6":
     case "ip":
       return "ip";
+    case "uri":
+    case "url":
+      return "url";
     default:
       return formatType as keyof ZodString;
   }
